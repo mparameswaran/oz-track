@@ -20,6 +20,10 @@
 		D0AA4B491BC89B1E00B68589 /* Services.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B481BC89B1E00B68589 /* Services.m */; };
 		D0AA4B521BC8A5D400B68589 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B511BC8A5D400B68589 /* DetailViewController.m */; };
 		D0AA4B551BC8C00B00B68589 /* BlendTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B541BC8C00B00B68589 /* BlendTarget.m */; };
+		D0AA4B581BC8CADD00B68589 /* Truck.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B571BC8CADD00B68589 /* Truck.m */; };
+		D0AA4B5B1BC8CB5B00B68589 /* Crusher.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B5A1BC8CB5B00B68589 /* Crusher.m */; };
+		D0AA4B5F1BC8DB8E00B68589 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B5D1BC8DB8E00B68589 /* Icon-60@2x.png */; };
+		D0AA4B601BC8DB8E00B68589 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B5E1BC8DB8E00B68589 /* Icon-60@3x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +60,13 @@
 		D0AA4B511BC8A5D400B68589 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		D0AA4B531BC8C00B00B68589 /* BlendTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendTarget.h; sourceTree = "<group>"; };
 		D0AA4B541BC8C00B00B68589 /* BlendTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlendTarget.m; sourceTree = "<group>"; };
+		D0AA4B561BC8CADD00B68589 /* Truck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Truck.h; sourceTree = "<group>"; };
+		D0AA4B571BC8CADD00B68589 /* Truck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Truck.m; sourceTree = "<group>"; };
+		D0AA4B591BC8CB5B00B68589 /* Crusher.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Crusher.h; sourceTree = "<group>"; };
+		D0AA4B5A1BC8CB5B00B68589 /* Crusher.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Crusher.m; sourceTree = "<group>"; };
+		D0AA4B5C1BC8D2C400B68589 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		D0AA4B5D1BC8DB8E00B68589 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
+		D0AA4B5E1BC8DB8E00B68589 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
 		E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -89,6 +100,7 @@
 		D0342F261BC887E20048995B = {
 			isa = PBXGroup;
 			children = (
+				D0AA4B5C1BC8D2C400B68589 /* PrefixHeader.pch */,
 				D0AA4B411BC8957900B68589 /* Resources */,
 				D0342F311BC887E20048995B /* OzTrack */,
 				D0342F4E1BC887E20048995B /* OzTrackTests */,
@@ -125,6 +137,10 @@
 				D0AA4B511BC8A5D400B68589 /* DetailViewController.m */,
 				D0AA4B531BC8C00B00B68589 /* BlendTarget.h */,
 				D0AA4B541BC8C00B00B68589 /* BlendTarget.m */,
+				D0AA4B561BC8CADD00B68589 /* Truck.h */,
+				D0AA4B571BC8CADD00B68589 /* Truck.m */,
+				D0AA4B591BC8CB5B00B68589 /* Crusher.h */,
+				D0AA4B5A1BC8CB5B00B68589 /* Crusher.m */,
 			);
 			path = OzTrack;
 			sourceTree = "<group>";
@@ -166,6 +182,8 @@
 		D0AA4B421BC8957900B68589 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				D0AA4B5D1BC8DB8E00B68589 /* Icon-60@2x.png */,
+				D0AA4B5E1BC8DB8E00B68589 /* Icon-60@3x.png */,
 				D0AA4B431BC8957900B68589 /* OZ_logo.png */,
 			);
 			path = images;
@@ -262,7 +280,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AA4B601BC8DB8E00B68589 /* Icon-60@3x.png in Resources */,
 				D0342F411BC887E20048995B /* Main.storyboard in Resources */,
+				D0AA4B5F1BC8DB8E00B68589 /* Icon-60@2x.png in Resources */,
 				D0342F461BC887E20048995B /* LaunchScreen.xib in Resources */,
 				D0342F431BC887E20048995B /* Images.xcassets in Resources */,
 				D0AA4B441BC8957900B68589 /* OZ_logo.png in Resources */,
@@ -319,9 +339,11 @@
 				D0342F381BC887E20048995B /* AppDelegate.m in Sources */,
 				D0342F351BC887E20048995B /* main.m in Sources */,
 				D0AA4B491BC89B1E00B68589 /* Services.m in Sources */,
+				D0AA4B581BC8CADD00B68589 /* Truck.m in Sources */,
 				D0342F3E1BC887E20048995B /* ViewController.m in Sources */,
 				D0342F3B1BC887E20048995B /* OzTrack.xcdatamodeld in Sources */,
 				D0AA4B521BC8A5D400B68589 /* DetailViewController.m in Sources */,
+				D0AA4B5B1BC8CB5B00B68589 /* Crusher.m in Sources */,
 				D0AA4B551BC8C00B00B68589 /* BlendTarget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -447,6 +469,8 @@
 			baseConfigurationReference = E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = OzTrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -458,6 +482,8 @@
 			baseConfigurationReference = 7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = PrefixHeader.pch;
 				INFOPLIST_FILE = OzTrack/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";

@@ -11,7 +11,7 @@
 
 @interface Crusher : NSObject
 
-extern const float MAX_TONS_HOUR;
+extern const CGFloat MAX_TONS_HOUR;
 
 
 -(BOOL) canDirectTip: (Truck *) truck;
