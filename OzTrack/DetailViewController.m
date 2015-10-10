@@ -9,8 +9,22 @@
 #import "DetailViewController.h"
 
 @interface DetailViewController()
-
 @property(weak, nonatomic) IBOutlet UILabel *titleLabel;
+
+
+
+
+//Parameters, Variables and Constants
+
+@property(nonatomic) CGFloat tonsAtCrusher;
+@property(strong, nonatomic) NSArray *currentGradesAtCrusher;
+@property(strong, nonatomic) NSArray *dailyVariation;
+@property(strong, nonatomic) NSArray *hourlyVariation;
+@property(nonatomic) CGFloat tonsInTruck;
+
+
+
+
 
 
 @end
@@ -35,5 +49,7 @@
 {
     NSLog(@"Response Object: %@", responseObject);
 }
+
+
 
 @end
