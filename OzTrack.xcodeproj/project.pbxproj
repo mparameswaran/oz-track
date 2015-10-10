@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6BDF4DD3C5195CF766408AC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C22FB3626E5536653E98802A /* libPods.a */; };
 		D0342F351BC887E20048995B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F341BC887E20048995B /* main.m */; };
 		D0342F381BC887E20048995B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F371BC887E20048995B /* AppDelegate.m */; };
 		D0342F3B1BC887E20048995B /* OzTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0342F391BC887E20048995B /* OzTrack.xcdatamodeld */; };
@@ -15,6 +16,10 @@
 		D0342F431BC887E20048995B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0342F421BC887E20048995B /* Images.xcassets */; };
 		D0342F461BC887E20048995B /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0342F441BC887E20048995B /* LaunchScreen.xib */; };
 		D0342F521BC887E20048995B /* OzTrackTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F511BC887E20048995B /* OzTrackTests.m */; };
+		D0AA4B441BC8957900B68589 /* OZ_logo.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B431BC8957900B68589 /* OZ_logo.png */; };
+		D0AA4B491BC89B1E00B68589 /* Services.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B481BC89B1E00B68589 /* Services.m */; };
+		D0AA4B521BC8A5D400B68589 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B511BC8A5D400B68589 /* DetailViewController.m */; };
+		D0AA4B551BC8C00B00B68589 /* BlendTarget.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B541BC8C00B00B68589 /* BlendTarget.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -28,6 +33,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		C22FB3626E5536653E98802A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0342F2F1BC887E20048995B /* OzTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0342F331BC887E20048995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0342F341BC887E20048995B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -42,6 +49,14 @@
 		D0342F4B1BC887E20048995B /* OzTrackTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = OzTrackTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0342F501BC887E20048995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0342F511BC887E20048995B /* OzTrackTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OzTrackTests.m; sourceTree = "<group>"; };
+		D0AA4B431BC8957900B68589 /* OZ_logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = OZ_logo.png; sourceTree = "<group>"; };
+		D0AA4B471BC89B1E00B68589 /* Services.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Services.h; sourceTree = "<group>"; };
+		D0AA4B481BC89B1E00B68589 /* Services.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Services.m; sourceTree = "<group>"; };
+		D0AA4B501BC8A5D400B68589 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		D0AA4B511BC8A5D400B68589 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		D0AA4B531BC8C00B00B68589 /* BlendTarget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlendTarget.h; sourceTree = "<group>"; };
+		D0AA4B541BC8C00B00B68589 /* BlendTarget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlendTarget.m; sourceTree = "<group>"; };
+		E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +64,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6BDF4DD3C5195CF766408AC0 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,12 +78,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8207DC4C72B813A9DDD4193B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C22FB3626E5536653E98802A /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		D0342F261BC887E20048995B = {
 			isa = PBXGroup;
 			children = (
+				D0AA4B411BC8957900B68589 /* Resources */,
 				D0342F311BC887E20048995B /* OzTrack */,
 				D0342F4E1BC887E20048995B /* OzTrackTests */,
 				D0342F301BC887E20048995B /* Products */,
+				F362062648B36998E513EB4D /* Pods */,
+				8207DC4C72B813A9DDD4193B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,11 +114,17 @@
 				D0342F371BC887E20048995B /* AppDelegate.m */,
 				D0342F3C1BC887E20048995B /* ViewController.h */,
 				D0342F3D1BC887E20048995B /* ViewController.m */,
+				D0AA4B471BC89B1E00B68589 /* Services.h */,
+				D0AA4B481BC89B1E00B68589 /* Services.m */,
 				D0342F3F1BC887E20048995B /* Main.storyboard */,
 				D0342F421BC887E20048995B /* Images.xcassets */,
 				D0342F441BC887E20048995B /* LaunchScreen.xib */,
 				D0342F391BC887E20048995B /* OzTrack.xcdatamodeld */,
 				D0342F321BC887E20048995B /* Supporting Files */,
+				D0AA4B501BC8A5D400B68589 /* DetailViewController.h */,
+				D0AA4B511BC8A5D400B68589 /* DetailViewController.m */,
+				D0AA4B531BC8C00B00B68589 /* BlendTarget.h */,
+				D0AA4B541BC8C00B00B68589 /* BlendTarget.m */,
 			);
 			path = OzTrack;
 			sourceTree = "<group>";
@@ -122,6 +155,31 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D0AA4B411BC8957900B68589 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				D0AA4B421BC8957900B68589 /* images */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		D0AA4B421BC8957900B68589 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				D0AA4B431BC8957900B68589 /* OZ_logo.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
+		F362062648B36998E513EB4D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */,
+				7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -129,9 +187,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0342F551BC887E20048995B /* Build configuration list for PBXNativeTarget "OzTrack" */;
 			buildPhases = (
+				D0411E3058061054EA9D9E05 /* Check Pods Manifest.lock */,
 				D0342F2B1BC887E20048995B /* Sources */,
 				D0342F2C1BC887E20048995B /* Frameworks */,
 				D0342F2D1BC887E20048995B /* Resources */,
+				EB61C33D7B6B923CAE16D0ED /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -205,6 +265,7 @@
 				D0342F411BC887E20048995B /* Main.storyboard in Resources */,
 				D0342F461BC887E20048995B /* LaunchScreen.xib in Resources */,
 				D0342F431BC887E20048995B /* Images.xcassets in Resources */,
+				D0AA4B441BC8957900B68589 /* OZ_logo.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +278,39 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		D0411E3058061054EA9D9E05 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		EB61C33D7B6B923CAE16D0ED /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0342F2B1BC887E20048995B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -224,8 +318,11 @@
 			files = (
 				D0342F381BC887E20048995B /* AppDelegate.m in Sources */,
 				D0342F351BC887E20048995B /* main.m in Sources */,
+				D0AA4B491BC89B1E00B68589 /* Services.m in Sources */,
 				D0342F3E1BC887E20048995B /* ViewController.m in Sources */,
 				D0342F3B1BC887E20048995B /* OzTrack.xcdatamodeld in Sources */,
+				D0AA4B521BC8A5D400B68589 /* DetailViewController.m in Sources */,
+				D0AA4B551BC8C00B00B68589 /* BlendTarget.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -347,6 +444,7 @@
 		};
 		D0342F561BC887E20048995B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OzTrack/Info.plist;
@@ -357,6 +455,7 @@
 		};
 		D0342F571BC887E20048995B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = OzTrack/Info.plist;
@@ -418,6 +517,7 @@
 				D0342F571BC887E20048995B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0342F581BC887E20048995B /* Build configuration list for PBXNativeTarget "OzTrackTests" */ = {
 			isa = XCConfigurationList;
@@ -426,6 +526,7 @@
 				D0342F5A1BC887E20048995B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
