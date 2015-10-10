@@ -32,7 +32,7 @@ UIActivityIndicatorView *activityIndicator;
     [activityIndicator setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
     [[self view]addSubview:activityIndicator];
     Services *service = [[Services alloc]initWithDelegate:self];
-    [service fetchTargetBlendData:@"ClientTarget/viewAll"];
+    [service fetchTargetBlendData:@"viewAll"];
     [activityIndicator startAnimating];
     
 }

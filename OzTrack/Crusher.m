@@ -24,12 +24,12 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
 
 -(BOOL)canDirectTip:(Truck *)truck
 {
-    if ( ([self tonsAtCrusher] + [truck tonsInTruck]) > MAX_TONS_HOUR) {
+    if ( ([self tonsAtCrusher] + [truck tons]) > MAX_TONS_HOUR) {
         return NO;
     }
     for (int i = 0; i < [[self currentGradesAtCrusher]count]; i++) {
-        CGFloat weightage = ([self tonsAtCrusher] * [[[self currentGradesAtCrusher]objectAtIndex:i]floatValue] ) + (truck.tonsInTruck * [[[truck currentGradesAtTruck]objectAtIndex:i]floatValue] );
-        float grade = weightage/([self tonsAtCrusher] + [truck tonsInTruck]);
+        CGFloat weightage = ([self tonsAtCrusher] * [[[self currentGradesAtCrusher]objectAtIndex:i]floatValue] ) + (truck.tons * [[[truck currentGradesAtTruck]objectAtIndex:i]floatValue] );
+        float grade = weightage/([self tonsAtCrusher] + [truck tons]);
         if(grade > [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] +[[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] * [[[self hourlyVariation]objectAtIndex:i]floatValue]/100  || grade < [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] - [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] * [[[self hourlyVariation]objectAtIndex:i]floatValue]/100 )
         {
             return NO;
@@ -41,4 +41,12 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
     
 }
 
+
++(RKObjectMapping *) mapping
+{
+    RKObjectMapping *crusherMapping = [RKObjectMapping mappingForClass:[Crusher class]];
+    [crusherMapping mappingForSourceKeyPath:@"Crusher Data"];
+    [crusherMapping addAttributeMappingsFromDictionary:@{@"grade A":@"gradeA",@"grade B":@"gradeB",@"grade C":@"gradeC",@"grade D":@"gradeD",@"grade E":@"gradeE",@"grade F":@"gradeF",@"grade G":@"gradeG",@"grade H":@"gradeH",@"grade I":@"gradeI", @"Tonnes":@"tons"}];
+    return crusherMapping;
+}
 @end

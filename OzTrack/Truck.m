@@ -13,7 +13,8 @@
 +(RKObjectMapping *) mapping
 {
     RKObjectMapping *truckMapping = [RKObjectMapping mappingForClass:[Truck class]];
-    [truckMapping mappingForSourceKeyPath:@"truckData"];
+    [truckMapping mappingForSourceKeyPath:@"Truck Info"];
+    [truckMapping addAttributeMappingsFromDictionary:@{@"Truck No":@"number",@"grade A":@"gradeA",@"grade B":@"gradeB",@"grade C":@"gradeC",@"grade D":@"gradeD",@"grade E":@"gradeE",@"grade F":@"gradeF",@"grade G":@"gradeG",@"grade H":@"gradeH",@"grade I":@"gradeI",@"weight":@"tons"}];
     return truckMapping;
 }
 

@@ -157,8 +157,8 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="37" y="73" width="140" height="21"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="30" y="136" width="140" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kyq-6N-sfc">
@@ -166,46 +166,61 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="220" y="73" width="140" height="21"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="220" y="136" width="140" height="21"/>
                                 </variation>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mv9-3c-bRw">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="194" y="179" width="180" height="185"/>
+                                </variation>
+                            </textView>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="brc-J5-a3z">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="90" y="380" width="200" height="200"/>
+                                </variation>
+                            </webView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-we-KWC">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="12" y="179" width="180" height="185"/>
+                                </variation>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="Kyq-6N-sfc" secondAttribute="trailing" constant="24" id="7nb-Yp-wDI"/>
-                            <constraint firstItem="Jnp-i7-ikx" firstAttribute="leading" secondItem="Egt-os-BOb" secondAttribute="leadingMargin" constant="21" id="Fws-MY-uUd"/>
-                            <constraint firstItem="Jnp-i7-ikx" firstAttribute="top" secondItem="deE-kP-LPZ" secondAttribute="bottom" constant="53" id="Qjg-nW-Uea"/>
-                            <constraint firstItem="Kyq-6N-sfc" firstAttribute="top" secondItem="deE-kP-LPZ" secondAttribute="bottom" constant="53" id="hzp-ad-kTq"/>
-                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="Jnp-i7-ikx"/>
                                 <exclude reference="Kyq-6N-sfc"/>
-                            </mask>
-                            <mask key="constraints">
-                                <exclude reference="Fws-MY-uUd"/>
-                                <exclude reference="Qjg-nW-Uea"/>
-                                <exclude reference="7nb-Yp-wDI"/>
-                                <exclude reference="hzp-ad-kTq"/>
+                                <exclude reference="Mv9-3c-bRw"/>
+                                <exclude reference="brc-J5-a3z"/>
+                                <exclude reference="shL-we-KWC"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="Jnp-i7-ikx"/>
                                 <include reference="Kyq-6N-sfc"/>
-                            </mask>
-                            <mask key="constraints">
-                                <include reference="Fws-MY-uUd"/>
-                                <include reference="Qjg-nW-Uea"/>
-                                <include reference="7nb-Yp-wDI"/>
-                                <include reference="hzp-ad-kTq"/>
+                                <include reference="Mv9-3c-bRw"/>
+                                <include reference="brc-J5-a3z"/>
+                                <include reference="shL-we-KWC"/>
                             </mask>
                         </variation>
                     </view>
                     <connections>
                         <outlet property="crusherLabel" destination="Kyq-6N-sfc" id="sox-0h-Md2"/>
+                        <outlet property="crusherTextView" destination="Mv9-3c-bRw" id="zg2-0h-pxt"/>
+                        <outlet property="graphView" destination="brc-J5-a3z" id="fuh-Zs-g2J"/>
                         <outlet property="truckLabel" destination="Jnp-i7-ikx" id="z6S-tH-yQX"/>
+                        <outlet property="truckTextView" destination="shL-we-KWC" id="cCs-U3-Ue0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aG7-Ev-gnr" userLabel="First Responder" sceneMemberID="firstResponder"/>

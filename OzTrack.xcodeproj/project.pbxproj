@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		6BDF4DD3C5195CF766408AC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C22FB3626E5536653E98802A /* libPods.a */; };
+		D011F5231BC959E70084DDDF /* CrushGauge.html in Resources */ = {isa = PBXBuildFile; fileRef = D011F5221BC959E70084DDDF /* CrushGauge.html */; };
 		D0342F351BC887E20048995B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F341BC887E20048995B /* main.m */; };
 		D0342F381BC887E20048995B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F371BC887E20048995B /* AppDelegate.m */; };
 		D0342F3B1BC887E20048995B /* OzTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0342F391BC887E20048995B /* OzTrack.xcdatamodeld */; };
@@ -41,6 +42,7 @@
 /* Begin PBXFileReference section */
 		7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C22FB3626E5536653E98802A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D011F5221BC959E70084DDDF /* CrushGauge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CrushGauge.html; sourceTree = "<group>"; };
 		D0342F2F1BC887E20048995B /* OzTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0342F331BC887E20048995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0342F341BC887E20048995B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -182,6 +184,7 @@
 		D0AA4B411BC8957900B68589 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D011F5221BC959E70084DDDF /* CrushGauge.html */,
 				D0AA4B421BC8957900B68589 /* images */,
 			);
 			path = Resources;
@@ -288,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D011F5231BC959E70084DDDF /* CrushGauge.html in Resources */,
 				D0AA4B651BC90B0600B68589 /* TargetTableViewCell.xib in Resources */,
 				D0AA4B601BC8DB8E00B68589 /* Icon-60@3x.png in Resources */,
 				D0342F411BC887E20048995B /* Main.storyboard in Resources */,

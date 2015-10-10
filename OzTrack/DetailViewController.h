@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Services.h"
-@interface DetailViewController : UIViewController <ServicesDelegate>
+@interface DetailViewController : UIViewController <ServicesDelegate, UITextViewDelegate, UIWebViewDelegate>
 
 
 

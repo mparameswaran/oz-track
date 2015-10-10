@@ -7,7 +7,8 @@
 //
 
 #import "Services.h"
-
+#import "Crusher.h"
+#import <RKSerialization.h>
 @implementation Services
 
 
@@ -21,7 +22,8 @@
 }
 -(void)fetchTargetBlendData:(NSString *)query
 {
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:[[[NSBundle mainBundle]infoDictionary]objectForKey:@"BASE_URL"]]];
     
     [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
@@ -40,35 +42,39 @@
 
 -(void) fetchTruckData:(NSString *) query
 {
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:[[[NSBundle mainBundle]infoDictionary]objectForKey:@"BASE_URL"]]];
     
-    [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    Truck *truck = [Truck new];
+    [objectManager  setAcceptHeaderWithMIMEType:@"application/json"];
+    
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Truck mapping] method:RKRequestMethodGET pathPattern:@"getTruckData" keyPath:@"Truck Info" statusCodes:nil];
+    [objectManager addResponseDescriptor:responseDescriptor];
+    [objectManager getObject:truck path:@"getTruckData" parameters:@{@"truckNo":query} success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
         
-        
-        [[self delegate]didFetchTruckData:responseObject];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[self delegate]didFailFetchingTruckData:error];
+        [self.delegate didFetchTruckData:(Truck *)[mappingResult firstObject]];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [self.delegate didFailFetchingTruckData:error];
     }];
 }
 
 -(void) fetchCrusherData:(NSString *) query
 {
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:[[[NSBundle mainBundle]infoDictionary]objectForKey:@"BASE_URL"]]];
+    Crusher *crusher = [Crusher new];
     
-    [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
-        
-        [[self delegate]didFetchCrusherData:responseObject];
-        
-    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
-        [[self delegate]didFailFetchingCrusherData:error];
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:[Crusher mapping] method:RKRequestMethodGET pathPattern:query keyPath:@"Crusher Data" statusCodes:nil];
+    [objectManager addResponseDescriptor:responseDescriptor];
+    [objectManager getObject:crusher path:query parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) {
+        [self.delegate didFetchCrusherData:(Crusher *)[mappingResult firstObject]];
+    } failure:^(RKObjectRequestOperation *operation, NSError *error) {
+        [self.delegate didFailFetchingCrusherData:error];
     }];
 }
 
 -(void) sendCrusherData:(NSString *) data
 {
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:[[[NSBundle mainBundle]infoDictionary]objectForKey:@"BASE_URL"]]];
     
     [[objectManager HTTPClient]getPath:data parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
         

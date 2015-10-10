@@ -12,7 +12,7 @@
 
 
 @property(strong, nonatomic) NSArray *currentGradesAtTruck;
-@property(nonatomic) float tonsInTruck;
+@property(nonatomic) CGFloat tons;
 @property(nonatomic) CGFloat gradeA;
 @property(nonatomic) CGFloat gradeB;
 @property(nonatomic) CGFloat gradeC;
@@ -22,6 +22,7 @@
 @property(nonatomic) CGFloat gradeG;
 @property(nonatomic) CGFloat gradeH;
 @property(nonatomic) CGFloat gradeI;
+@property(nonatomic, copy) NSString *number;
 
 +(RKObjectMapping *)mapping;
 

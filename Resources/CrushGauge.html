@@ -1,0 +1,47 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript">
+	//loads the package
+      google.load("visualization", "1", {packages:["gauge"]});
+      google.setOnLoadCallback(drawChart);
+	  
+	  var init_value = 400;
+	  var final_value = 628;
+	  var max_value = 40000;
+	 
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Label', 'Value'],
+          ['', init_value],
+         
+        ]);
+
+        var options = {
+          width: 250, height: 120,
+          redFrom: 30000, redTo: 40000,
+          yellowFrom:25000, yellowTo: 30000,
+		  greenFrom: 5000, greenTo: 25000,
+		  min: 0, max: 40000,
+		  majorTicks: ['0','','','','20000','','','','40000'],
+          minorTicks: 10		  
+        };
+
+        var chart = new google.visualization.Gauge(document.getElementById('chart_div'));
+
+        chart.draw(data, options);
+
+        setInterval(function() {
+          data.setValue(0, 1, final_value);
+          chart.draw(data, options);
+        }, 2000);
+        
+      }
+    </script>
+  </head>
+  <body>
+    <div id="chart_div" style="width: 400px; height: 120px;"></div>
+	Tonnes in Crusher
+  </body>
+</html>
