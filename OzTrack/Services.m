@@ -19,11 +19,12 @@
     [self setDelegate:delegate];
     return self;
 }
--(void)fetchData:(NSString *)query
+-(void)fetchTargetBlendData:(NSString *)query
 {
-    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://localhost:6789"]];
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
     
     [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
         
         [[self delegate]didFetchBlendTarget:responseObject];
         
@@ -31,7 +32,52 @@
         [[self delegate]didFailFetchingBlendTarget:error];
     }];
     
+
+    
                                       
+}
+
+
+-(void) fetchTruckData:(NSString *) query
+{
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    
+    [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        [[self delegate]didFetchTruckData:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[self delegate]didFailFetchingTruckData:error];
+    }];
+}
+
+-(void) fetchCrusherData:(NSString *) query
+{
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    
+    [[objectManager HTTPClient]getPath:query parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        [[self delegate]didFetchCrusherData:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[self delegate]didFailFetchingCrusherData:error];
+    }];
+}
+
+-(void) sendCrusherData:(NSString *) data
+{
+    RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://192.168.51.189:8080"]];
+    
+    [[objectManager HTTPClient]getPath:data parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+        
+        
+        [[self delegate]didSendCrusherData:responseObject];
+        
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        [[self delegate]didFailSendingCrusherData:error];
+    }];
 }
 
 @end

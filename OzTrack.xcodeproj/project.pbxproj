@@ -24,6 +24,8 @@
 		D0AA4B5B1BC8CB5B00B68589 /* Crusher.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B5A1BC8CB5B00B68589 /* Crusher.m */; };
 		D0AA4B5F1BC8DB8E00B68589 /* Icon-60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B5D1BC8DB8E00B68589 /* Icon-60@2x.png */; };
 		D0AA4B601BC8DB8E00B68589 /* Icon-60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B5E1BC8DB8E00B68589 /* Icon-60@3x.png */; };
+		D0AA4B641BC90B0600B68589 /* TargetTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0AA4B621BC90B0600B68589 /* TargetTableViewCell.m */; };
+		D0AA4B651BC90B0600B68589 /* TargetTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0AA4B631BC90B0600B68589 /* TargetTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,6 +69,9 @@
 		D0AA4B5C1BC8D2C400B68589 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		D0AA4B5D1BC8DB8E00B68589 /* Icon-60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@2x.png"; sourceTree = "<group>"; };
 		D0AA4B5E1BC8DB8E00B68589 /* Icon-60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-60@3x.png"; sourceTree = "<group>"; };
+		D0AA4B611BC90B0600B68589 /* TargetTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TargetTableViewCell.h; sourceTree = "<group>"; };
+		D0AA4B621BC90B0600B68589 /* TargetTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TargetTableViewCell.m; sourceTree = "<group>"; };
+		D0AA4B631BC90B0600B68589 /* TargetTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TargetTableViewCell.xib; sourceTree = "<group>"; };
 		E97684DA9F84131D7788C8B0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -141,6 +146,9 @@
 				D0AA4B571BC8CADD00B68589 /* Truck.m */,
 				D0AA4B591BC8CB5B00B68589 /* Crusher.h */,
 				D0AA4B5A1BC8CB5B00B68589 /* Crusher.m */,
+				D0AA4B611BC90B0600B68589 /* TargetTableViewCell.h */,
+				D0AA4B621BC90B0600B68589 /* TargetTableViewCell.m */,
+				D0AA4B631BC90B0600B68589 /* TargetTableViewCell.xib */,
 			);
 			path = OzTrack;
 			sourceTree = "<group>";
@@ -280,6 +288,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0AA4B651BC90B0600B68589 /* TargetTableViewCell.xib in Resources */,
 				D0AA4B601BC8DB8E00B68589 /* Icon-60@3x.png in Resources */,
 				D0342F411BC887E20048995B /* Main.storyboard in Resources */,
 				D0AA4B5F1BC8DB8E00B68589 /* Icon-60@2x.png in Resources */,
@@ -338,6 +347,7 @@
 			files = (
 				D0342F381BC887E20048995B /* AppDelegate.m in Sources */,
 				D0342F351BC887E20048995B /* main.m in Sources */,
+				D0AA4B641BC90B0600B68589 /* TargetTableViewCell.m in Sources */,
 				D0AA4B491BC89B1E00B68589 /* Services.m in Sources */,
 				D0AA4B581BC8CADD00B68589 /* Truck.m in Sources */,
 				D0342F3E1BC887E20048995B /* ViewController.m in Sources */,

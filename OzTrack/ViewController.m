@@ -8,14 +8,15 @@
 
 #import "ViewController.h"
 #import "DetailViewController.h"
-
+#import "TargetTableViewCell.h"
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UITableView *optionsTable;
 @property (strong, nonatomic) NSDictionary *options;
+@property (strong, nonatomic) NSArray *gradeData;
 
 @end
-
+UIActivityIndicatorView *activityIndicator;
 @implementation ViewController
 
 - (void)viewDidLoad {
@@ -23,7 +24,32 @@
     _options = @{@"Metrics":@"Evaluate and display time information", @"Blending Target":@"View and edit blending target", @"Direct Tip":@"View possible direct tip"};
     [[self optionsTable] setDelegate:self];
     [[self optionsTable] setDataSource:self];
+   
+    [[self optionsTable] setHidden:YES];
+    activityIndicator = [[UIActivityIndicatorView alloc]initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
+    [[self view]setBackgroundColor:[UIColor darkGrayColor]];
+    [activityIndicator setFrame:CGRectMake(150, 200, 150, 150)];
+    [activityIndicator setCenter:CGPointMake(self.view.frame.size.width/2, self.view.frame.size.height/2)];
+    [[self view]addSubview:activityIndicator];
+    Services *service = [[Services alloc]initWithDelegate:self];
+    [service fetchTargetBlendData:@"ClientTarget/viewAll"];
+    [activityIndicator startAnimating];
     
+}
+
+-(void)didFetchBlendTarget:(id)responseObject
+{
+    [[self view]setBackgroundColor:[UIColor whiteColor]];
+    [self setGradeData:[ NSArray arrayWithArray:(NSArray *)[responseObject objectForKey:@"ClientTargets"]]];
+    [activityIndicator stopAnimating];
+    [[self optionsTable]setHidden:NO];
+    [[self optionsTable]reloadData];
+}
+
+
+-(void)didFailFetchingBlendTarget:(NSError *)error
+{
+    NSLog(@"Error: %@", [error localizedDescription]);
 }
 
 - (void)didReceiveMemoryWarning {
@@ -37,34 +63,37 @@
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *cellIdentifier = @"OptionCell";
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    TargetTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (!cell) {
-        cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell = [TargetTableViewCell cellFromNib:@"TargetTableViewCell"];
     }
-    [[cell textLabel]setText:[[[self options]allKeys]objectAtIndex:[indexPath row]]];
-    [[cell detailTextLabel]setText:[[[self options]allValues]objectAtIndex:[indexPath row]]];
+
     
-    return cell;
+    [[cell grade]setText:[[[self gradeData] objectAtIndex:indexPath.row]objectForKey:@"letterGrades"]];
+    [[cell target]setText:[NSString stringWithFormat:@"Target: %@",[[[self gradeData] objectAtIndex:indexPath.row]objectForKey:@"gradelevels"]]];
+    [[cell hourlyVariance]setText:[NSString stringWithFormat:@"Hourly: ±%@%%",[[[self gradeData] objectAtIndex:indexPath.row]objectForKey:@"Hourly_Tol"]]];
+    [[cell dailyVariance]setText:[NSString stringWithFormat:@"Daily: ±%@%%",[[[self gradeData] objectAtIndex:indexPath.row]objectForKey:@"Daily_Tol"]]];
+    return (UITableViewCell *)cell;
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[self options]count];
+    return [[self gradeData]count];
 }
 
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [self performSegueWithIdentifier:@"showInfo" sender:[tableView cellForRowAtIndexPath:indexPath]];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return 110.0;
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    if ([[segue identifier]isEqualToString:@"showInfo"]) {
-        DetailViewController *detailViewController = [segue destinationViewController];
-
-        [detailViewController setTitle:[[sender textLabel]text]];
-        
-    }
+    
 }
 
 @end

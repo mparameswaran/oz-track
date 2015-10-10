@@ -10,4 +10,11 @@
 
 @implementation Truck
 
++(RKObjectMapping *) mapping
+{
+    RKObjectMapping *truckMapping = [RKObjectMapping mappingForClass:[Truck class]];
+    [truckMapping mappingForSourceKeyPath:@"truckData"];
+    return truckMapping;
+}
+
 @end

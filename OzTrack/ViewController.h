@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Services.h"
-@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, ServicesDelegate>
 
 
 @end
