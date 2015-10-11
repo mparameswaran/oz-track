@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>BASE_URL</key>
-	<string>http://192.168.51.189:8080/ClientTarget</string>
+	<string>http://192.168.52.25:8080/ClientTarget</string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>

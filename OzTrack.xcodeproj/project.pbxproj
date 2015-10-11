@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		6BDF4DD3C5195CF766408AC0 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C22FB3626E5536653E98802A /* libPods.a */; };
 		D011F5231BC959E70084DDDF /* CrushGauge.html in Resources */ = {isa = PBXBuildFile; fileRef = D011F5221BC959E70084DDDF /* CrushGauge.html */; };
+		D011F5261BC9FAD10084DDDF /* UIColor+HexColorCode.m in Sources */ = {isa = PBXBuildFile; fileRef = D011F5251BC9FAD10084DDDF /* UIColor+HexColorCode.m */; };
 		D0342F351BC887E20048995B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F341BC887E20048995B /* main.m */; };
 		D0342F381BC887E20048995B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D0342F371BC887E20048995B /* AppDelegate.m */; };
 		D0342F3B1BC887E20048995B /* OzTrack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0342F391BC887E20048995B /* OzTrack.xcdatamodeld */; };
@@ -43,6 +44,8 @@
 		7BA484DCF624C6C4AD47EE68 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		C22FB3626E5536653E98802A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D011F5221BC959E70084DDDF /* CrushGauge.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = CrushGauge.html; sourceTree = "<group>"; };
+		D011F5241BC9FAD10084DDDF /* UIColor+HexColorCode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+HexColorCode.h"; sourceTree = "<group>"; };
+		D011F5251BC9FAD10084DDDF /* UIColor+HexColorCode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+HexColorCode.m"; sourceTree = "<group>"; };
 		D0342F2F1BC887E20048995B /* OzTrack.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OzTrack.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0342F331BC887E20048995B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0342F341BC887E20048995B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -129,6 +132,8 @@
 		D0342F311BC887E20048995B /* OzTrack */ = {
 			isa = PBXGroup;
 			children = (
+				D011F5241BC9FAD10084DDDF /* UIColor+HexColorCode.h */,
+				D011F5251BC9FAD10084DDDF /* UIColor+HexColorCode.m */,
 				D0342F361BC887E20048995B /* AppDelegate.h */,
 				D0342F371BC887E20048995B /* AppDelegate.m */,
 				D0342F3C1BC887E20048995B /* ViewController.h */,
@@ -359,6 +364,7 @@
 				D0AA4B521BC8A5D400B68589 /* DetailViewController.m in Sources */,
 				D0AA4B5B1BC8CB5B00B68589 /* Crusher.m in Sources */,
 				D0AA4B551BC8C00B00B68589 /* BlendTarget.m in Sources */,
+				D011F5261BC9FAD10084DDDF /* UIColor+HexColorCode.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

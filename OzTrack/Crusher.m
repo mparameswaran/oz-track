@@ -23,6 +23,10 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
         return NO;
     }
     for (int i = 0; i < [[self currentGradesAtCrusher]count]; i++) {
+        
+        float temp = [self tonsAtCrusher] * [[[self currentGradesAtCrusher]objectAtIndex:0]floatValue];
+        float temp2 = truck.tons * [[[truck currentGradesAtTruck]objectAtIndex:i]floatValue] ;
+
         CGFloat weightage = ([self tonsAtCrusher] * [[[self currentGradesAtCrusher]objectAtIndex:i]floatValue] ) + (truck.tons * [[[truck currentGradesAtTruck]objectAtIndex:i]floatValue] );
         float grade = weightage/([self tonsAtCrusher] + [truck tons]);
         if(grade > [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] +[[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] * [[[self hourlyVariation]objectAtIndex:i]floatValue]/100  || grade < [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] - [[[self targetGradesAtCrusher]objectAtIndex:i]floatValue] * [[[self hourlyVariation]objectAtIndex:i]floatValue]/100 )
@@ -47,16 +51,16 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
 
 -(void)updateWithTruckData:(Truck *)truck
 {
-    [self setGradeA:(self.gradeA + truck.gradeA)];
-    [self setGradeB:(self.gradeB + truck.gradeB)];
-    [self setGradeC:(self.gradeC + truck.gradeC)];
-    [self setGradeD:(self.gradeD + truck.gradeD)];
-    [self setGradeE:(self.gradeE + truck.gradeE)];
-    [self setGradeF:(self.gradeF + truck.gradeF)];
-    [self setGradeG:(self.gradeG + truck.gradeG)];
-    [self setGradeH:(self.gradeH + truck.gradeH)];
-    [self setGradeI:(self.gradeI + truck.gradeI)];
-    
+    [self setGradeA:((self.gradeA*self.tonsAtCrusher + truck.gradeA*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeB:((self.gradeB*self.tonsAtCrusher + truck.gradeB*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeC:((self.gradeC*self.tonsAtCrusher + truck.gradeC*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeD:((self.gradeD*self.tonsAtCrusher + truck.gradeD*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeE:((self.gradeE*self.tonsAtCrusher + truck.gradeE*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeF:((self.gradeF*self.tonsAtCrusher + truck.gradeF*truck.tons) / (self.tonsAtCrusher + truck.tons))];
+    [self setGradeG:((self.gradeG*self.tonsAtCrusher + truck.gradeG*truck.tons)/ (self.tonsAtCrusher + truck.tons))];
+    [self setGradeH:((self.gradeH*self.tonsAtCrusher + truck.gradeH*truck.tons) / (self.tonsAtCrusher + truck.tons)) ];
+    [self setGradeI: ((self.gradeI*self.tonsAtCrusher + truck.gradeI*truck.tons)/ (self.tonsAtCrusher + truck.tons)) ];
+    [self setTonsAtCrusher:(self.tonsAtCrusher + truck.tons)];
     
 }
 @end
