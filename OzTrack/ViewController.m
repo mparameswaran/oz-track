@@ -93,7 +93,26 @@ UIActivityIndicatorView *activityIndicator;
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    
+ 
+    if ([[segue identifier]isEqualToString:@"directTip"]) {
+        DetailViewController *detailView = [segue destinationViewController];
+        Crusher *targetCrusher = [[Crusher alloc]init];
+        NSMutableArray *targetGrades = [[NSMutableArray alloc]initWithCapacity:[self gradeData].count];
+        NSMutableArray *hourlyVariations =[[NSMutableArray alloc]initWithCapacity:[self gradeData].count];
+        NSMutableArray *dailyVariations = [[NSMutableArray alloc]initWithCapacity:[self gradeData].count];
+        for (int i = 0 ; i < self.gradeData.count; i++) {
+            [targetGrades addObject:[[[self gradeData]objectAtIndex:i]objectForKey:@"gradelevels"]];
+            [hourlyVariations addObject:[[[self gradeData]objectAtIndex:i]objectForKey:@"Hourly_Tol"]];
+            [dailyVariations addObject:[[[self gradeData]objectAtIndex:i]objectForKey:@"Daily_Tol"]];
+        }
+        [targetCrusher setTargetGradesAtCrusher:targetGrades];
+        
+        [targetCrusher setHourlyVariation: hourlyVariations];
+        [targetCrusher setDailyVariation:dailyVariations];
+        
+        [detailView setTargetCrusher:targetCrusher];
+        
+    }
 }
 
 @end

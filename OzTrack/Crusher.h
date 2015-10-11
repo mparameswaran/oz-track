@@ -22,7 +22,14 @@ extern const CGFloat MAX_TONS_HOUR;
 @property(nonatomic) CGFloat gradeG;
 @property(nonatomic) CGFloat gradeH;
 @property(nonatomic) CGFloat gradeI;
-@property(nonatomic) CGFloat tons;
+@property(nonatomic) CGFloat tonsAtCrusher;
+@property(strong, nonatomic) NSArray *currentGradesAtCrusher;
+@property(strong, nonatomic) NSArray *targetGradesAtCrusher;
+@property(strong, nonatomic) NSArray *dailyVariation;
+@property(strong, nonatomic) NSArray *hourlyVariation;
+
+
 -(BOOL) canDirectTip: (Truck *) truck;
 +(RKObjectMapping *) mapping;
+-(void) updateWithTruckData:(Truck *) truck;
 @end

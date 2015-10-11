@@ -72,11 +72,15 @@
     }];
 }
 
--(void) sendCrusherData:(NSString *) data
+-(void) updateCrusherData:(Crusher *) data
 {
     RKObjectManager *objectManager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:[[[NSBundle mainBundle]infoDictionary]objectForKey:@"BASE_URL"]]];
     
-    [[objectManager HTTPClient]getPath:data parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
+    NSDictionary *crusherDictionary = @{@"a": [NSString stringWithFormat:@"%f", data.gradeA], @"b": [NSString stringWithFormat:@"%f",data.gradeB], @"c": [NSString stringWithFormat:@"%f",data.gradeC], @"d": [NSString stringWithFormat:@"%f",data.gradeD], @"e":[NSString stringWithFormat:@"%f",data.gradeE], @"f":[NSString stringWithFormat:@"%f",data.gradeF], @"g":[NSString stringWithFormat:@"%f",data.gradeG], @"h":[NSString stringWithFormat:@"%f",data.gradeH], @"i":[NSString stringWithFormat:@"%f",data.gradeI],@"tonnes":[NSString stringWithFormat:@"%f",data.tonsAtCrusher]};
+    [objectManager  setAcceptHeaderWithMIMEType:@"application/json"];
+    
+    [RKMIMETypeSerialization registerClass:[RKNSJSONSerialization class] forMIMEType:@"text/plain"];
+    [[objectManager HTTPClient]getPath:@"insertCrushData" parameters:crusherDictionary success:^(AFHTTPRequestOperation *operation, id responseObject) {
         
         
         [[self delegate]didSendCrusherData:responseObject];

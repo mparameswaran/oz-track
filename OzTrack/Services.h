@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <RestKit/RestKit.h>
-
+#import "Crusher.h"
 
 @protocol ServicesDelegate <NSObject>
 
@@ -30,6 +30,6 @@
 -(void) fetchTargetBlendData:(NSString *) query;
 -(void) fetchCrusherData:(NSString *) query;
 -(void) fetchTruckData:(NSString *) query;
--(void) sendCrusherData:(NSString *)data;
+-(void) updateCrusherData:(Crusher *)data;
 
 @end

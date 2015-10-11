@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Services.h"
+#import "Crusher.h"
 @interface DetailViewController : UIViewController <ServicesDelegate, UITextViewDelegate, UIWebViewDelegate>
 
 
@@ -15,5 +16,5 @@
 @property(copy, nonatomic) NSString *title;
 
 -(void) setTitle:(NSString *)title;
-
+@property(strong, nonatomic) Crusher *targetCrusher;
 @end

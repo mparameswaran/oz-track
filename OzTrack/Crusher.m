@@ -9,11 +9,6 @@
 #import "Crusher.h"
 
 @interface Crusher()
-@property(nonatomic) CGFloat tonsAtCrusher;
-@property(strong, nonatomic) NSArray *currentGradesAtCrusher;
-@property(strong, nonatomic) NSArray *targetGradesAtCrusher;
-@property(strong, nonatomic) NSArray *dailyVariation;
-@property(strong, nonatomic) NSArray *hourlyVariation;
 
 
 @end
@@ -46,7 +41,22 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
 {
     RKObjectMapping *crusherMapping = [RKObjectMapping mappingForClass:[Crusher class]];
     [crusherMapping mappingForSourceKeyPath:@"Crusher Data"];
-    [crusherMapping addAttributeMappingsFromDictionary:@{@"grade A":@"gradeA",@"grade B":@"gradeB",@"grade C":@"gradeC",@"grade D":@"gradeD",@"grade E":@"gradeE",@"grade F":@"gradeF",@"grade G":@"gradeG",@"grade H":@"gradeH",@"grade I":@"gradeI", @"Tonnes":@"tons"}];
+    [crusherMapping addAttributeMappingsFromDictionary:@{@"grade A":@"gradeA",@"grade B":@"gradeB",@"grade C":@"gradeC",@"grade D":@"gradeD",@"grade E":@"gradeE",@"grade F":@"gradeF",@"grade G":@"gradeG",@"grade H":@"gradeH",@"grade I":@"gradeI", @"Tonnes":@"tonsAtCrusher"}];
     return crusherMapping;
+}
+
+-(void)updateWithTruckData:(Truck *)truck
+{
+    [self setGradeA:(self.gradeA + truck.gradeA)];
+    [self setGradeB:(self.gradeB + truck.gradeB)];
+    [self setGradeC:(self.gradeC + truck.gradeC)];
+    [self setGradeD:(self.gradeD + truck.gradeD)];
+    [self setGradeE:(self.gradeE + truck.gradeE)];
+    [self setGradeF:(self.gradeF + truck.gradeF)];
+    [self setGradeG:(self.gradeG + truck.gradeG)];
+    [self setGradeH:(self.gradeH + truck.gradeH)];
+    [self setGradeI:(self.gradeI + truck.gradeI)];
+    
+    
 }
 @end
