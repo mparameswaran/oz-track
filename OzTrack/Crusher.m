@@ -24,6 +24,8 @@ const CGFloat MAX_TONS_HOUR = 1700.0;
     }
     for (int i = 0; i < [[self currentGradesAtCrusher]count]; i++) {
         
+        if(i ==6)
+            continue;
         float temp = [self tonsAtCrusher] * [[[self currentGradesAtCrusher]objectAtIndex:0]floatValue];
         float temp2 = truck.tons * [[[truck currentGradesAtTruck]objectAtIndex:i]floatValue] ;
 
